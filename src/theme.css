@@ -2,6 +2,23 @@ body {
 	background: #333;
 }
 
+/* windows */
+.window {
+	width: 512px;
+	height: 256px;
+	background: #ddd;
+	overflow: auto;
+	resize: both;
+}
+
+.window-title {
+	width: 100%;
+	height: 27px;
+	background: #0af
+}
+
+/* misc. */
+
 .addbtn {
 	margin: 1em;
 	width: 3em;
