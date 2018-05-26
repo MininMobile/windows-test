@@ -49,8 +49,8 @@ class Window {
 		body.appendChild(this.window);
 
 		// Attach Event Listeners
-		this.window.onclick = (e) => {
-			MoveToFront(e);
+		this.window.onmousedown = (e) => {
+			this.MoveToFront(e);
 		}
 
 		// Initialize App
@@ -62,7 +62,15 @@ class Window {
 	 * @param {MouseEvent} e
 	 */
 	MoveToFront(e) {
+		let max = 0;
 
+		Array.prototype.forEach.call(document.getElementsByClassName("window"), (x) => {
+			let z = x.style.zIndex;
+			
+			max = Math.max(max, z);
+		});
+
+		this.window.style.zIndex = max + 1;
 	}
 }
 
