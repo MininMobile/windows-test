@@ -4,6 +4,7 @@ body {
 
 /* windows */
 .window {
+	position: absolute;
 	width: 512px;
 	height: 256px;
 	background: #ddd;
