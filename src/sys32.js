@@ -11,6 +11,7 @@ var appdata = {
 			author:"Microsoft",
 			description:"Browser your files"
 		},
+		init:(w) => { w.window.classList.add("explorer") },
 		content:`<center><h1>Files, files, files...</h1><center>`
 	}
 }
@@ -40,6 +41,8 @@ class Window {
 		this.window.appendChild(this.titlebar);
 		this.window.appendChild(this.content);
 		body.appendChild(this.window);
+
+		this.appdata.init(this);
 	}
 }
 

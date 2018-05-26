@@ -19,6 +19,12 @@ body {
 	background: #0af;
 }
 
+.window-content {
+	width: 100%;
+	height: calc(100% - 36px);
+	overflow: auto;
+}
+
 /* misc. */
 
 .addbtn {
