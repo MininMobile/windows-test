@@ -4,11 +4,25 @@ var apps = {
 	"0":"explorer"
 }
 
+var appdata = {
+	"explorer":{
+		title:"Explorer",
+		meta:{
+			author:"Microsoft",
+			description:"Browser your files"
+		},
+		content:`<center><h1>Files, files, files...</h1><center>`
+	}
+}
+
 // Windows
 
 class Window {
 	constructor(appid = "0") {
 		const body = document.body;
+
+		this.appid = appid;
+		this.appdata = appdata[apps[this.appid]];
 
 		this.window = document.createElement("div");
 		this.window.classList.add("window");
@@ -16,10 +30,15 @@ class Window {
 		this.titlebar = document.createElement("div");
 		this.titlebar.classList.add("window-title");
 		this.titlebar.onmousedown = (e) => windowDragEvent(e, this.window);
+
+		this.content = document.createElement("div");
+		this.content.classList.add("window-content");
+		this.content.innerHTML = this.appdata.content;
 		
 		if (apps[appid]) this.window.classList.add(apps[appid]);
 
 		this.window.appendChild(this.titlebar);
+		this.window.appendChild(this.content);
 		body.appendChild(this.window);
 	}
 }
