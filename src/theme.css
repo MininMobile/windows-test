@@ -13,15 +13,36 @@ body {
 }
 
 .window-title {
-	width: calc(100% - 4px);
-	height: 32px;
-	padding: 2px;
+	display: flex;
+	width: calc(100% - 1em);
+	height: 2em;
+	padding: 0.5em;
+	padding-bottom: 0;
 	background: #0af;
+}
+
+.window-title-title {
+	display: flex;
+	flex: 0.5;
+	color: #fff;
+	font-size: 1em;
+}
+
+.window-title-buttons {
+	display: flex;
+	flex: 0.5;
+	justify-content: right;
+}
+
+.window-title-buttons-close {
+	height: 1.5em;
+	width: 1.5em;
+	background: #fff;
 }
 
 .window-content {
 	width: 100%;
-	height: calc(100% - 36px);
+	height: calc(100% - 3em);
 	overflow: auto;
 }
 

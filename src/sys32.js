@@ -34,6 +34,18 @@ class Window {
 		this.titlebar = document.createElement("div");
 		this.titlebar.classList.add("window-title");
 		this.titlebar.onmousedown = (e) => windowDragEvent(e, this.window);
+		
+		// Title Bar > Title
+		this.titlebar.innerHTML += `<div class="window-title-title">${this.appdata.title}</div>`
+
+		// Title Bar > Actions
+		this.titlebar_buttons = document.createElement("div");
+		this.titlebar_buttons.classList.add("window-title-buttons");
+
+		// Title Bar > Actions > Close
+		this.titlebar_buttons_close = document.createElement("div");
+		this.titlebar_buttons_close.classList.add("window-title-buttons-close");
+		this.titlebar_buttons_close.onclick = () => this.window.remove();
 
 		// Window Content
 		this.content = document.createElement("div");
@@ -42,6 +54,10 @@ class Window {
 		
 		// if app exists, add appid to classlist
 		if (apps[appid]) this.window.classList.add(`app-${this.appid}`);
+
+		// Append Children to Title Bar
+		this.titlebar_buttons.appendChild(this.titlebar_buttons_close);
+		this.titlebar.appendChild(this.titlebar_buttons);
 
 		// Append Children to Base Window Element
 		this.window.appendChild(this.titlebar);
