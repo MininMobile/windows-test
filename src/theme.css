@@ -6,5 +6,7 @@ body {
 	margin: 1em;
 	width: 3em;
 	height: 3em;
+	display: block;
 	background: url("./img/explorer.png");
+	background-size: contain;
 }
