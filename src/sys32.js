@@ -6,7 +6,7 @@ class Window {
 	constructor(appid = "0") {
 		const body = document.body;
 
-		body.appendChild();
+		body.appendChild(document.createElement("div"));
 	}
 }
 
